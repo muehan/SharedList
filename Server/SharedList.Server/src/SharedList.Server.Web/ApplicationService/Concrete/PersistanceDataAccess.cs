@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Newtonsoft.Json;
 using SharedList.Server.Web.Model;
 
@@ -7,35 +8,51 @@ namespace SharedList.Server.Web.ApplicationService.Concrete
 {
     public class PersistanceDataAccess
     {
-        public IEnumerable<Item> LoadAllItems()
+        public List<Item> LoadAllItems()
         {
-            throw new System.NotImplementedException();
+            return DeserializeList();
         }
 
         public Item AddNewItem(Item newItem)
         {
-            throw new System.NotImplementedException();
+            var list = DeserializeList();
+            list.Add(newItem);
+            SerializeList(list);
+
+            return newItem;
         }
 
         public Item ChangeItem(Item changedItem)
         {
-            throw new System.NotImplementedException();
+            var list = DeserializeList();
+            var oldItem = list.Single(x => x.ItemId == changedItem.ItemId);
+
+            oldItem.Checked = changedItem.Checked;
+            oldItem.Text = changedItem.Text;
+
+            SerializeList(list);
+
+            return changedItem;
         }
 
         public void Delete(Item itemToDelete)
         {
-            throw new System.NotImplementedException();
+            var list = DeserializeList();
+            list.Remove(itemToDelete);
+
+            SerializeList(list);
         }
 
-        private void SerializeList(IEnumerable<Item> items)
+        private void SerializeList(List<Item> items)
         {
             string json = JsonConvert.SerializeObject(items);
-            
+            File.WriteAllText("list.json", json);
         }
 
-        private IEnumerable<Item> DeserializeList(string json)
+        private List<Item> DeserializeList()
         {
-            return (IEnumerable<Item>) JsonConvert.DeserializeObject<IEnumerable<Item>>(json);
-        } 
+            string json = File.ReadAllText("list.json");
+            return (List<Item>)JsonConvert.DeserializeObject<List<Item>>(json);
+        }
     }
 }
