@@ -13,9 +13,13 @@ namespace SharedList.Server.Web.ApplicationService.Concrete
             return DeserializeList();
         }
 
-        public Item AddNewItem(Item newItem)
+        public Item AddNewItem(string text)
         {
             var list = DeserializeList();
+            var newItem = new Item();
+            newItem.Text = text;
+            newItem.ItemId = list.OrderByDescending(x => x.ItemId).FirstOrDefault().ItemId++;
+
             list.Add(newItem);
             SerializeList(list);
 

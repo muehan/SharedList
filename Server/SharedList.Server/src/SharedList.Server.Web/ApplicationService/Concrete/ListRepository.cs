@@ -21,7 +21,7 @@ namespace SharedList.Server.Web.ApplicationService.Concrete
             return items;
         }
 
-        public Item AddItem(Item newItem)
+        public Item AddItem(string newItem)
         {
             var itemCreated = persistanceDataAccess.AddNewItem(newItem);
 

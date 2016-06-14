@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SharedList.Server.Web", "src\SharedList.Server.Web\SharedList.Server.Web.xproj", "{2AB0B47D-3B13-4EA7-A229-E2068CA96A2A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{37D86B8F-38DC-4AE9-90BC-774AB986503B}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SharedList.Server.Web.UnitTests", "SharedList.Server.Web.UnitTests\SharedList.Server.Web.UnitTests.xproj", "{2AE1F490-817C-4862-A08C-9B13195FED47}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,11 +26,16 @@ Global
 		{2AB0B47D-3B13-4EA7-A229-E2068CA96A2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AB0B47D-3B13-4EA7-A229-E2068CA96A2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AB0B47D-3B13-4EA7-A229-E2068CA96A2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AE1F490-817C-4862-A08C-9B13195FED47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AE1F490-817C-4862-A08C-9B13195FED47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AE1F490-817C-4862-A08C-9B13195FED47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AE1F490-817C-4862-A08C-9B13195FED47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2AB0B47D-3B13-4EA7-A229-E2068CA96A2A} = {08E3ED47-956B-4226-A759-FB6AF54C7E90}
+		{2AE1F490-817C-4862-A08C-9B13195FED47} = {37D86B8F-38DC-4AE9-90BC-774AB986503B}
 	EndGlobalSection
 EndGlobal

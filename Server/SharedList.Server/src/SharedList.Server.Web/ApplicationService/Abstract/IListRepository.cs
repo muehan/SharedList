@@ -7,7 +7,7 @@ namespace SharedList.Server.Web.ApplicationService.Abstract
     {
         IEnumerable<Item> GetItems();
 
-        Item AddItem(Item newItem);
+        Item AddItem(string newItem);
 
         Item EditItem(Item changedItem);
 
